@@ -54,4 +54,12 @@ cursor: pointer;
     text-transform: uppercase;
     border-radius: 6px;
     padding: 10px 20px;
+    cursor: pointer;
+    transition: 500ms all;
+}
+
+.quote-href button:hover{
+    background-color: orange;
+    color: #fff;
+  
 }
