@@ -1,5 +1,5 @@
 
-import './App.css';
+
 import Quote from './component/Quote';
 import { BrowserRouter } from 'react-router-dom';
 

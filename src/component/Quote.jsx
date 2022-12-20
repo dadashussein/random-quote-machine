@@ -11,7 +11,6 @@ const Quote = () => {
 
     const color ={
         red : "#670a0a",
-        blue : "#0000ff",
         green : "#0b670b",
         yellow : "#606004",
         orange : "#754e04",
@@ -20,16 +19,18 @@ const Quote = () => {
 
    
     const getRandomColor = ()=>{
-        
+        fetchQuote();
          const colorArray = Object.values(color);
             const randomIndex = Math.floor(Math.random()*colorArray.length);
             return colorArray[randomIndex];
      }
     useEffect( ()=>{
+      
+
         // code to run after every render/re-render
         document.body.style.backgroundColor = getRandomColor();
         
-   });
+   },[]);
 
 
 
@@ -58,11 +59,12 @@ const fetchQuote =async()=>{
         <span>{author}</span>
       </div>
     <div className='quote-href'>
+      <div className="links">
         <span><AiOutlineTwitter /></span>
         <span><AiOutlineInstagram /></span>
-    </div>
-      <button className='new-quote' onClick={()=>fetchQuote()}>New Quote</button>
-      
+        </div>
+      <button onClick={()=>fetchQuote()}>New Quote</button>
+      </div>
     </div>
   )
   
