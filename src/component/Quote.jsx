@@ -9,27 +9,22 @@ import { AiOutlineInstagram } from "react-icons/ai";
 
 const Quote = () => {
 
-    const color ={
-        red : "#670a0a",
-        blue : "#0000ff",
-        green : "#0b670b",
-        yellow : "#606004",
-        orange : "#754e04",
-        purple : "#600760",
-    }
+    const getRandomColor = () => {
+        const letters = '0123456789ABCDEF';
+        let color = '#';
+        for (let i = 0; i < 6; i++) {
+          color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+      }
 
-   
-    const getRandomColor = ()=>{
-        
-         const colorArray = Object.values(color);
-            const randomIndex = Math.floor(Math.random()*colorArray.length);
-            return colorArray[randomIndex];
-     }
+
     useEffect( ()=>{
         // code to run after every render/re-render
         document.body.style.backgroundColor = getRandomColor();
+        fetchQuote();
         
-   });
+   },[]);
 
 
 
@@ -57,12 +52,12 @@ const fetchQuote =async()=>{
       <div className='quote-author'>
         <span>{author}</span>
       </div>
-    <div className='quote-href'>
+    
+      <button className='new-quote' onClick={()=>fetchQuote()}>New Quote</button>
+      <div className='quote-href'>
         <span><AiOutlineTwitter /></span>
         <span><AiOutlineInstagram /></span>
     </div>
-      <button className='new-quote' onClick={()=>fetchQuote()}>New Quote</button>
-      
     </div>
   )
   

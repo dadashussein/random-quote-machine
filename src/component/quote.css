@@ -1,93 +1,153 @@
-.quote-box{
-    border-radius: 6px;
+.quote-box {
+    display: flex;
+    flex-direction: column;
+    border-radius: 2rem;
     position: relative;
-    width: 450px;
-    height: 300px;
-    padding: 40px 50px;
-    
+    width: 25rem;
+    padding: 2rem 4rem;
     background-color: #fff;
+    
 }
 
-.icon{
-    font-size: 50px;
+.icon {
+    font-size: 3rem;
 }
-.quote-text{
+
+.quote-text {
+
     font-size: 20px;
     font-weight: 600;
     line-height: 1.5;
-    margin-bottom: 20px;
-    color: none;
+    margin: 0 0 1rem 0;
+    color: #000;
 }
 
-.quote-author{
-    margin-top: auto;
+.quote-author {
     font-size: 16px;
-    font-weight: 400;
-    
+    font-weight: 600;
+    font-family: Dancing Script, cursive;
 }
 
-.quote-author::before{
+.quote-author::before {
     content: '-';
     margin-right: 10px;
 }
 
-.quote-author::after{
+.quote-author::after {
     content: '';
     display: block;
-    width: 50px;
-    height: 2px;
+    width: 100%;
+    height: 0.1em;
     background-color: #000;
-    margin-top: 10px;
+    margin-top: 1em;
 }
 
-.new-quote{
-    position: absolute;
-    bottom: 1px;
-    right: 90px;
-    transform: translate(50%, -50%);
-    background-color: #000;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 6px;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: 400ms all;
-    
-}
-.new-quote:hover{
-    background-color: #fff;
+.new-quote {
+    border: 2px solid black;
+    margin: 1rem 2rem;
     color: #000;
-    
-}
-
-.quote-href{
-    position: absolute;
-    bottom: 3px;
-    
-   left: 1px;
-    transform: translate(50%, -50%);
-    color: #fff;
-    border-radius: 6px;
-    font-size: 16px;
+    padding: .4rem 3rem;
+    border-radius: 2rem;
+    font-size: 1rem;
     font-weight: 600;
+    text-transform: uppercase;
     cursor: pointer;
-    
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: all .3s;
+
 }
 
-.quote-href span:nth-child(1) {
-    background-color: #000;
-    padding: 6px;
-    font-size: 25px;
-    border-radius: 5px;
+.new-quote:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: #000;
+}
+
+.quote-href {
+    font-size: 22px;
+    margin-top: 1rem;
+    gap: 10px;
+    display: flex;
+    justify-content: center;
+    color: rgba(128, 128, 128, 0.637);
+}
+
+.quote-href a {
+    color: rgba(128, 128, 128, 0.637);
+    text-decoration: none;
+    transition: all .3s;
+}
+
+/* Breakpoints */
+
+@media screen and (max-width: 1024px) {
+    .quote-box {
+        margin: 0 auto;
+        width: 20rem;
+        padding: 1rem 2rem;
     }
 
-.quote-href span:nth-child(2){
-    background-color: #000;
-    margin: 7px;
-    padding: 6px 8px;
-    font-size: 25px;
-    border-radius: 5px;
+    .quote-text {
+        font-size: 18px;
+    }
+
+    .quote-author {
+        font-size: 14px;
+    }
+
+    .new-quote {
+        bottom: 1rem;
+        right: 7rem;
+        padding: .5rem 1rem;
+        font-size: .8rem;
+    }
 
 }
 
+@media screen and (max-width: 768px) {
+    .quote-box {
+        margin: 0 auto;
+        width: 20rem;
+        padding: 1rem 2rem;
+    }
+
+    .quote-text {
+        font-size: 16px;
+    }
+
+    .quote-author {
+        font-size: 14px;
+    }
+
+    .new-quote {
+        bottom: 1rem;
+        right: 5rem;
+        padding: .5rem 1rem;
+        font-size: .8rem;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .quote-box {
+        margin: 2rem auto;
+        width: 15rem;
+        padding: 1rem 2rem;
+    }
+
+    .quote-text {
+        font-size: 14px;
+    }
+
+    .icon {
+        font-size: 2rem;
+    }
+
+    .quote-author {
+        font-size: 12px;
+    }
+
+    .new-quote {
+        font-size: 12px;
+        padding: .5rem 1rem;
+
+    }
+}
